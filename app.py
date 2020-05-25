@@ -1,7 +1,6 @@
 from flask import Flask,render_template,request,redirect,url_for,g
 from find_terms import sorted_results,sorted_results_2
 
-
 app = Flask(__name__)
 
 @app.route("/")
