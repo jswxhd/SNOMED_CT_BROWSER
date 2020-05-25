@@ -9,7 +9,6 @@ import math
 import numpy as np
 
 
-
 #my_documents=["Shipment of gold damaged in a fire","Delivery of silver arrived in a silver truck",
 #"Shipment of gold arrived in a truck"]
 		
