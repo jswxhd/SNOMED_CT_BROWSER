@@ -1,3 +1,3 @@
 # SNOMED_CT_BROWSER
 senior project 
- search result page in directory templates
+1. search result page in directory templates
