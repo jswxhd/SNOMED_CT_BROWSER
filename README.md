@@ -1,3 +1,3 @@
 # SNOMED_CT_BROWSER
 senior project 
-1. search result page in directory templates
+optimize and improve common snomed ct browser
