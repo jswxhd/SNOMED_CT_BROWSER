@@ -110,11 +110,9 @@ def get_relatives(query):
     print(end-middle)
 
     return results_term_2,results_synonmys,results_FSN,results_term,children_term, parents_term, grand_children_term, grand_parents_term, AM_term, CA_term, M_term, FS_term
-    #运行时间18.64s
+   
 
-#xx = get_relatives('headache')[0]
-#a = cm.partition_match('cough')
-#get_relatives('headache')
+
 
 def get_relatives_2(query):
     begin=time()
@@ -165,8 +163,6 @@ def get_relatives_2(query):
 
     return a,results_term,children_term, parents_term, grand_children_term, grand_parents_term
 
-#results_term=get_relatives_2('headache')[1]
-#print(results_term)
 
 
 def grouping(results_term,children_term, parents_term, grand_children_term, grand_parents_term):
@@ -182,10 +178,7 @@ def grouping(results_term,children_term, parents_term, grand_children_term, gran
             total_group.append(simlarity_group)
         else:
             total_group.append([])
-    #a = children_term[0]+parents_term[0]+grand_children_term[0]+grand_parents_term[0]
-    #similarity_group = get_similarity_group(a,results_term[0])
-    #print(total_group[:4])
-    #print(results_term[0], children_term[0],parents_term[0],grand_children_term[0],grand_parents_term[0])
+
     for i,j,k,m,n in zip(results_term, children_term, parents_term, grand_children_term, grand_parents_term):
         temp_index = []
         if j:
@@ -236,8 +229,7 @@ def grouping_similarity_2(total_group, total_group_index):
 
     return scores
 
-#xx=grouping_similarity_2('cough')
-#print(xx[:10],len(xx))
+
 
 def sorting_list(a,b):
     for i in range(len(a)-1):
@@ -256,10 +248,7 @@ def sorted_results(query):
     total_group,total_group_index = grouping(results_term, children_term, parents_term, 
                                                 grand_children_term, grand_parents_term)
     scores = grouping_similarity_2(total_group, total_group_index)
-    #my_results = cm.partition_match(query)
-    #results_term = cm.find_term_2(my_results)
-    #scores = grouping_similarity_2(query)
-    #sorted_results_id = sorting_list(scores, results_id)
+
     begin=time()
     sorted_results_term = sorting_list(scores,results_term_2)
     sorted_results_synonmys = sorting_list(scores, results_synonmys)
@@ -277,10 +266,7 @@ def sorted_results(query):
     
     return sorted_results_term, sorted_results_synonmys, sorted_results_FSN, sorted_children_term, sorted_parents_term, sorted_grandchildren_term, sorted_grandparents_term, sorted_AM_term, sorted_CA_term, sorted_M_term, sorted_FS_term
     
-#sorted_results_term, sorted_results_synonmys, sorted_results_FSN, sorted_children_term, sorted_parents_term, sorted_grandchildren_term, sorted_grandparents_term, sorted_AM_term, sorted_CA_term, sorted_M_term, sorted_FS_term = sorted_results('cough')
-#print(sorted_results_term)
-#xx = sorted_results('cough')[3]
-#print(xx[:10], len(xx))
+
 
 def sorted_results_2(query):
     results_conceptid, results_term, children_term, parents_term, grand_children_term, grand_parents_term = get_relatives_2(query)
@@ -337,8 +323,3 @@ def sorted_results_2(query):
     
     return length, sorted_results_term, sorted_results_synonmys, sorted_results_FSN, sorted_children_term, sorted_parents_term, sorted_grandchildren_term, sorted_grandparents_term, sorted_AM_term, sorted_CA_term, sorted_M_term, sorted_FS_term
 
-#length, sorted_results_term, sorted_results_synonmys, sorted_results_FSN, sorted_children_term, sorted_parents_term, sorted_grandchildren_term, sorted_grandparents_term, sorted_AM_term, sorted_CA_term, sorted_M_term, sorted_FS_term=sorted_results_2('cough')
-#print(sorted_results_term)
-#sorted_resuts_term=sorted_results_2('headache')[1]
-#print(sorted_resuts_term)
-#sorted_results_2('headache')
