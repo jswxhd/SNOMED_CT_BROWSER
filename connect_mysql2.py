@@ -169,27 +169,7 @@ def find_term_5(mylist):
     return term
 
 
-def construct_group(key_words):
-    
-    group_distance_1=[]
-    try:
-         
-        for key in key_words:
-            with open('data.csv')as f:
-                f_csv = csv.reader(f)
-                list1=[]
-                for row in f_csv:       
-                    if row[0]==key:
-                        list1.append(row[1])
-                    elif row[1]==key:
-                        list1.append(row[0])
-                
-                group_distance_1.append(list1)
-        
-    except:
-        print("Error: unable to find distance 1 group")
-        
-    return group_distance_1
+
         
     
 
