@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>SNOMED CT Terminology Server</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		a{text-decoration:none; color:#666666;}
+		#nav ol{ list-style:disc; float:left; text-align:left; margin-top: 18px; line-height: 42px; margin-left: -40px;}
+		#nav ol li{ font-family:"Times New Roman","宋体"; font-size:20px; font-style:normal; font-weight:bold; letter-spacing:1px;}
+		#nav ol li a:hover{ color:#666666;border-bottom:1px solid #0c0c0c;}
+
+
+		.font {
+			font-size: 20px;
+		}
+
+		.locate{
+			height: 10px;
+			position: relative;
+			left:10px;
+			top:20px;
+		}
+		.move_right{
+
+			position: relative;
+			right:100px;
+
+		}
+		.alert {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			padding: 5px;
+		}
+		.alert-success {
+			color: #3c763d;
+			background-color: #dff0d8;
+			border-color: #d6e9c6;
+		}
+
+		#div5{
+			display:none;
+		}
+		#div6{
+			display:none;
+		}
+		#div7{
+			display:none;
+		}
+	</style>
+	<script  type="text/javascript">
+	  		 function submit(){
+			 	document.fileForm.submit();
+			 }
+	</script>
+	<script type="text/javascript">
+		function dropdw1(){
+			var obt=document.getElementById("bt1");
+			var odiv=document.getElementById("div1");
+
+			if(odiv.style.display=="none"){
+				odiv.style.display="block";
+
+			}
+			else{
+				odiv.style.display="none";
+
+			}
+
+		}
+		function dropdw2(){
+			var obt=document.getElementById("bt2");
+			var odiv=document.getElementById("div2");
+
+			if(odiv.style.display=="none"){
+				odiv.style.display="block";
+
+			}
+			else{
+				odiv.style.display="none";
+
+			}
+
+		}
+		function dropdw3(){
+			var obt=document.getElementById("bt3");
+			var odiv=document.getElementById("div3");
+
+			if(odiv.style.display=="none"){
+				odiv.style.display="block";
+
+			}
+			else{
+				odiv.style.display="none";
+
+			}
+
+		}
+		function dropdw4(){
+			var obt=document.getElementById("bt4");
+			var odiv=document.getElementById("div4");
+
+			if(odiv.style.display=="none"){
+				odiv.style.display="block";
+			}
+			else{
+				odiv.style.display="none";
+
+			}
+
+		}
+		function dropdw5(){
+			var obt=document.getElementById("bt5");
+			var odiv=document.getElementById("div5");
+
+			if(odiv.style.display=="none"){
+				odiv.style.display="block";
+			}
+			else{
+				odiv.style.display="none";
+
+			}
+
+		}
+		function dropdw6(){
+			var obt=document.getElementById("bt6");
+			var odiv=document.getElementById("div6");
+
+			if(odiv.style.display=="none"){
+				odiv.style.display="block";
+			}
+			else{
+				odiv.style.display="none";
+
+			}
+
+		}
+		function dropdw7(){
+			var obt=document.getElementById("bt7");
+			var odiv=document.getElementById("div7");
+
+			if(odiv.style.display=="none"){
+				odiv.style.display="block";
+			}
+			else{
+				odiv.style.display="none";
+
+			}
+
+		}
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			$("#nav li").click(function(){
+				$("#nav li").eq($(this).index()).addClass("navdown").siblings().removeClass("navdown");
+			})
+		})
+	</script>
+</head>
+
+
+<body>
+
+	<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>Welcome to SNOMED CT Terminology Server </h1>
+  <p>Designers: Di Huang, Junfeng Wu, Lisha Wu,Chunyu Jiang,Yu Zhu</p> 
+</div>
+
+
+
+	<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li><a href="#introduction" data-toggle="tab">Introduction</a></li>
+				<li class="active"><a href="#home" data-toggle="tab">HOME</a></li>
+				<li><a href="#definition" data-toggle="tab">Code Definition</a></li>
+				<li><a href="#guidence" data-toggle="tab">Guidance</a></li>
+				<li><a href="#contact" data-toggle="tab">Contact us</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+
+
+
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane fade" id="introduction">
+					<font size="6">SNOMED CT -- Systematized Nomenclature of Medicine-Clinical Terms, is a clinical terminology that is 
+						widely used internationally. This set of terminology provides a comprehensive and 
+						unified medical terminology system. This website provides accurate search in Snomed CT terminology database.
+						Searching results are optimized by the algorithm.
+						You can search and learn medical terms in the website. Enjoy your search! </font>
+				</div>
+				<!-- tab home的内容-->
+				<div class="tab-pane fade in active" id="home">
+					<div class="tabbable" id="tabs-891747">
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="#panel-202186" data-toggle="tab">Content</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="panel-202186"></div>
+						</div>
+					</div>
+					<div class="row clearfix">
+						<div class="col-md-4 column">
+							<h2>
+								Terminology
+							</h2>
+						</div>
+						<div class="locate">
+							<div class="btn-group">
+								<button class="btn btn-default">SNOMEDCT</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">snomedct</a>
+									</li>
+									<li class="disabled">
+										<a href="#">OTHERS</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="row clearfix">
+						<div class="col-md-6 column">
+							<h2>
+								Query
+							</h2>
+							<p>
+								please enter some keywords
+							</p>
+							<form action = "http://localhost:5000/search/" method ='post'>
+								<div class="input-group">
+									<input Id="putin" name="putin" type="text" class="form-control">
+									<span class="input-group-btn">
+							<button class="btn btn-default" type="button"  onclick="submit()">
+							Go!
+							</button>
+						</span>
+								</div><!-- /input-group -->
+							</form>
+						</div>
+					</div>
+					<div class="row clearfix">
+						<div class="col-md-6 column">
+							<h3>
+								Search Results
+							</h3>
+							{% if results_amount>50 %}
+							<h5>
+								(total {{results_amount}} results, show best 50 results)
+							</h5>
+							{% else %}
+							<h5>
+								(total {{results_amount}} results, show {{results_amount}} results)
+							</h5>
+							{% endif %}							
+							<div id="nav" style="text-align: center">
+								<h2 class="move_right">
+									Page {{page}}
+								</h2>
+								<ol>
+									<li>
+										<a href="http://localhost:5000/result/{{query}}/{{page}}/10"> {{sorted_results_term[10*page-10]}}</a>
+									</li>
+									<li>
+										<a href="http://localhost:5000/result/{{query}}/{{page}}/9"> {{sorted_results_term[10*page-9]}}</a>
+									</li>
+									<li>
+										<a href="http://localhost:5000/result/{{query}}/{{page}}/8"> {{sorted_results_term[10*page-8]}}</a>
+									</li>
+									<li>
+										<a href="http://localhost:5000/result/{{query}}/{{page}}/7"> {{sorted_results_term[10*page-7]}}</a>
+									</li>
+									<li>
+										<a href="http://localhost:5000/result/{{query}}/{{page}}/6"> {{sorted_results_term[10*page-6]}}</a>
+									</li>
+									<li>
+										<a href="http://localhost:5000/result/{{query}}/{{page}}/5"> {{sorted_results_term[10*page-5]}}</a>
+									</li>
+									<li>
+										<a href="http://localhost:5000/result/{{query}}/{{page}}/4"> {{sorted_results_term[10*page-4]}}</a>
+									</li>
+									<li>
+										<a href="http://localhost:5000/result/{{query}}/{{page}}/3"> {{sorted_results_term[10*page-3]}}</a>
+									</li>
+									<li>
+										<a href="http://localhost:5000/result/{{query}}/{{page}}/2"> {{sorted_results_term[10*page-2]}}</a>
+									</li>
+									<li>
+										<a href="http://localhost:5000/result/{{query}}/{{page}}/1"> {{sorted_results_term[10*page-1]}}</a>
+									</li>							
+								</ol>
+							</div>
+							<br></br>
+							<ul class="pagination pagination-lg">
+								<li>
+									<a href="http://localhost:5000/result/{{query}}/{{page-1}}/0">Prev</a>
+								</li>
+								<li>
+									<a href="http://localhost:5000/result/{{query}}/1/0">1</a>
+								</li>
+								<li>
+									<a href="http://localhost:5000/result/{{query}}/2/0">2</a>
+								</li>
+								<li>
+									<a href="http://localhost:5000/result/{{query}}/3/0">3</a>
+								</li>
+								<li>
+									<a href="http://localhost:5000/result/{{query}}/4/0">4</a>
+								</li>
+								<li>
+									<a href="http://localhost:5000/result/{{query}}/5/0">5</a>
+								</li>
+								<li>
+									<a href="http://localhost:5000/result/{{query}}/{{page+1}}/0">Next</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-6 column">
+							<div class="panel panel-default">
+								{% if order>=1 %}
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										{{sorted_results_term[10*page-order]}}
+									</h3>
+								</div>
+								{% if sorted_results_synonmys[10*page-order] %}
+								<div class="panel-body">
+									<strong>synonmys:</strong> {{','.join(sorted_results_synonmys[10*page-order])}}
+								</div>
+								{% else %}
+								<div class="panel-body">
+									<strong>synonmys:</strong> no synonmys	
+								</div>
+								{% endif %}
+								{% if sorted_results_FSN[10*page-order] %}								
+								<div class="panel-body">
+									<strong>fully specified name:</strong> {{sorted_results_FSN[10*page-order]}}
+								</div>
+								{% else %}
+								<div class="panel-body">
+									<strong>fully specified name:</strong> not specified	
+								</div>
+								{% endif %}
+								{% if sorted_results_parents[10*page-order] %}								
+								<div class="panel-body">
+									<strong>parents:</strong>
+									{% for doc in sorted_results_parents[10*page-order] %}
+									<p class="p1">{{doc}}</p>
+									{% endfor %}	
+								</div>
+								{% else %}
+								<div class="panel-body">
+									<strong>parents:</strong> no parents	
+								</div>
+								{% endif %}								
+								{% if sorted_results_children[10*page-order] %}								
+								<div class="panel-body">
+									<strong>children:</strong>
+									{% for doc in sorted_results_children[10*page-order] %}
+									<p class="p1">{{doc}}</p>
+									{% endfor %}	
+								</div>
+								{% else %}
+								<div class="panel-body">
+									<strong>children:</strong> no children	
+								</div>
+								{% endif %}
+								<div style="line-height:30px" ><strong>&nbsp;&nbsp;&nbsp;&nbsp;Attribute Relationship</strong></div>
+								{% if sorted_AM_term[10*page-order] %}
+								<div class="panel-body">
+									Associated morphology: {{','.join(sorted_AM_term[10*page-order])}}
+								</div>
+								{% else %}
+								<div class="panel-body">
+									Associated morphology: not specified	
+								</div>
+								{% endif %}
+								{% if sorted_CA_term[10*page-order] %}								
+								<div class="panel-body">
+									Causative agent: {{','.join(sorted_CA_term[10*page-order])}}
+								</div>
+								{% else %}
+								<div class="panel-body">
+									Causative agent: not specified	
+								</div>
+								{% endif %}
+								{% if sorted_M_term[10*page-order] %}								
+								<div class="panel-body">
+									Finding method: {{','.join(sorted_M_term[10*page-order])}}
+								</div>
+								{% else %}
+								<div class="panel-body">
+									Finding method: not specified	
+								</div>
+								{% endif %}
+								{% if sorted_FS_term[10*page-order] %}								
+								<div class="panel-body">
+									Finding site: {{','.join(sorted_FS_term[10*page-order])}}
+								</div>
+								{% else %}
+								<div class="panel-body">
+									Finding site: not specified	
+								</div>
+								{% endif %}																
+								{% else %}
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										term concept
+									</h3>
+								</div>
+								<div class="panel-body">
+									<strong>synonmys:</strong>
+								</div>
+								<div class="panel-body">
+									<strong>fully specified name:</strong>
+								</div>
+								<div class="panel-body">
+									<strong>relatives:</strong>
+								</div>
+								<div class="panel-body">
+									<strong>other attribute relatives:</strong>
+								</div>
+								{% endif %}
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- tab definition的内容-->
+				<div class="tab-pane fade" id="definition">
+					<br></br>
+					<div>
+						<label class="alert alert-success" id="bt1"  onclick="dropdw1()"> Additional Relationship Types ↓</label>
+						<div  id="div1">
+							<ul type=disc>
+								<li>116676008 : Associated morphology</li>
+								<li>116678009 : Has measured component</li>
+								<li>116680003 : Is a</li>
+								<li>116683001 : Associated function</li>
+								<li>116686009 : Has specimen</li>
+								<li>118168003 : Specimen source morphology</li>
+								<li>118169006 : Specimen source topography</li>
+								<li>118170007 : Specimen source identity</li>
+								<li>118171006 : Specimen procedure</li>
+								<li>123005000 : Part of</li>
+								<li>127489000 : Has active ingredient</li>
+								<li>131195008 : Subject of information</li>
+								<li>246075003 : Causative agent</li>
+								<li>246090004 : Associated finding</li>
+								<li>246093002 : Component</li>
+								<li>246100006 : Onset</li>
+								<li>246112005 : Severity</li>
+								<li>246267002 : Location</li>
+								<li>246454002 : Occurrence</li>
+								<li>246456000 : Episodicity</li>
+								<li>246501002 : Technique</li>
+								<li>246513007 : Revision status</li>
+								<li>255234002 : After</li>
+								<li>258214002 : Stage</li>
+								<li>260507000 : Access</li>
+								<li>260669005 : Approach</li>
+								<li>260686004 : Method</li>
+								<li>260858005 : Extent</li>
+								<li>260870009 : Priority</li>
+								<li>260908002 : Course</li>
+								<li>261583007 : Using</li>
+								<li>263502005 : Clinical course</li>
+								<li>263535000 : Communication with wound</li>
+								<li>272741003 : Laterality</li>
+								<li>308489006 : Pathological process</li>
+								<li>309824003 : Instrumentation</li>
+								<li>363589002 : Associated procedure</li>
+								<li>363698007 : Finding site</li>
+								<li>363699004 : Direct device</li>
+								<li>363700003 : Direct morphology</li>
+								<li>363701004 : Direct substance</li>
+								<li>363702006 : Has focus</li>
+								<li>363703001 : Has intent</li>
+								<li>363704007 : Procedure site</li>
+								<li>363705008 : Has definitional manifestation</li>
+								<li>363708005 : Temporally follows</li>
+								<li>363709002 : Indirect morphology</li>
+								<li>363710007 : Indirect device</li>
+								<li>363713009 : Has interpretation</li>
+								<li>363714003 : Interprets</li>
+								<li>363715002 : Associated etiologic finding</li>
+								<li>367346004 : Measures</li>
+								<li>370127007 : Access instrument</li>
+								<li>370129005 : Measurement method</li>
+								<li>370130000 : Property</li>
+								<li>370131001 : Recipient category</li>
+								<li>370132008 : Scale type</li>
+								<li>370133003 : Specimen substance</li>
+								<li>370134009 : Time aspect</li>
+								<li>370135005 : Pathological process</li>
+								<li>371881003 : During</li>
+								<li>405813007 : Procedure site - Direct</li>
+								<li>405814001 : Procedure site - Indirect</li>
+								<li>405815000 : Procedure device</li>
+								<li>405816004 : Procedure morphology</li>
+								<li>408729009 : Finding context</li>
+								<li>408730004 : Procedure context</li>
+								<li>408731000 : Temporal context</li>
+								<li>408732007 : Subject relationship context</li>
+								<li>410675002 : Route of administration</li>
+								<li>411116001 : Has manufactured dose form</li>
+								<li>418775008 : Finding method</li>
+								<li>419066007 : Finding informer</li>
+								<li>424226004 : Using device</li>
+								<li>424244007 : Using energy</li>
+								<li>424361007 : Using substance</li>
+								<li>424876005 : Surgical approach</li>
+								<li>425391005 : Using access device</li>
+								<li>42752001  : Due to</li>
+								<li>447561005 : SNOMED CT source code to target map code correlation not specified</li>
+								<li>47429007  : Associated with</li>
+								<li>704318007 : Property type</li>
+								<li>704319004 : Inheres in</li>
+								<li>704321009 : Characterizes</li>
+								<li>704324001 : Process output</li>
+								<li>704326004 : Precondition</li>
+								<li>704327008 : Direct site</li>
+								<li>718497002 : Inherent location</li>
+								<li>719715003 : Relative to part of</li>
+								<li>719722006 : Has realization</li>
+								<li>726542003 : Has disposition</li>
+								<li>726633004 : Temporally related to</li>
+								<li>726634005 : During AND/OR after</li>
+								<li>732943007 : Has BoSS</li>
+								<li>732944001 : Has presentation strength numerator value</li>
+								<li>732945000 : Has presentation strength numerator unit</li>
+								<li>732946004 : Has presentation strength denominator value</li>
+								<li>732947008 : Has presentation strength denominator unit</li>
+								<li>733722007 : Has concentration strength denominator unit</li>
+								<li>733723002 : Has concentration strength denominator value</li>
+								<li>733724008 : Has concentration strength numerator value</li>
+								<li>733725009 : Has concentration strength numerator unit</li>
+								<li>736472000 : Has dose form administration method</li>
+								<li>736473005 : Has dose form transformation</li>
+								<li>736474004 : Has dose form intended site</li>
+								<li>736475003 : Has dose form release characteristic</li>
+								<li>736476002 : Has basic dose form</li>
+								<li>736518005 : Has state of matter</li>
+								<li>738774007 Is modification of</li>
+								<li>762949000 Has precise active ingredient</li>
+								<li>763032000 Has unit of presentation</li>
+								<li>766939001 Plays role</li>
+								<li>766952006 Count of base of active ingredient</li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<label class="alert alert-success" id="bt2"  onclick="dropdw2()"> Attribute Names ↓</label>
+						<div  id="div2">
+							<ul>
+								<li>acceptabilityId : acceptabilityId</li>
+								<li>attributeDescription : attributeDescription</li>
+								<li>attributeOrder : attributeOrder</li>
+								<li>attributeType : attributeType</li>
+								<li>caseSignificanceId : caseSignificanceId</li>
+								<li>characteristicTypeId : characteristicTypeId</li>
+								<li>definitionStatusId : definitionStatusId</li>
+								<li>descriptionFormat : descriptionFormat</li>
+								<li>descriptionLength : descriptionLength</li>
+								<li>mapTarget : mapTarget</li>
+								<li>modifierId : modifierId</li>
+								<li>moduleId : moduleId</li>
+								<li>sourceEffectiveTime : sourceEffectiveTime</li>
+								<li>targetEffectiveTime : targetEffectiveTime</li>
+								<li>valueId : valueId</li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<label class="alert alert-success" id="bt3"  onclick="dropdw3()"> General Metadata Entries ↓</label>
+						<div  id="div3">
+							<ul>
+								<li>116676008 : Associated morphology</li>
+								<li>116678009 : Has measured component</li>
+								<li>116680003 : Is a</li>
+								<li>116683001 : Associated function</li>
+								<li>116686009 : Has specimen</li>
+								<li>118168003 : Specimen source morphology</li>
+								<li>118169006 : Specimen source topography</li>
+								<li>118170007 : Specimen source identity</li>
+								<li>118171006 : Specimen procedure</li>
+								<li>123005000 : Part of</li>
+								<li>127489000 : Has active ingredient</li>
+								<li>131195008 : Subject of information</li>
+								<li>246075003 : Causative agent</li>
+								<li>246090004 : Associated finding</li>
+								<li>246093002 : Component</li>
+								<li>246100006 : Onset</li>
+								<li>246112005 : Severity</li>
+								<li>246267002 : Location</li>
+								<li>246454002 : Occurrence</li>
+								<li>246456000 : Episodicity</li>
+								<li>246501002 : Technique</li>
+								<li>246513007 : Revision status</li>
+								<li>255234002 : After</li>
+								<li>258214002 : Stage</li>
+								<li>260507000 : Access</li>
+								<li>260669005 : Approach</li>
+								<li>260686004 : Method</li>
+								<li>260858005 : Extent</li>
+								<li>260870009 : Priority</li>
+								<li>260908002 : Course</li>
+								<li>261583007 : Using</li>
+								<li>263502005 : Clinical course</li>
+								<li>263535000 : Communication with wound</li>
+								<li>272741003 : Laterality</li>
+								<li>308489006 : Pathological process</li>
+								<li>309824003 : Instrumentation</li>
+								<li>363589002 : Associated procedure</li>
+								<li>363698007 : Finding site</li>
+								<li>363699004 : Direct device</li>
+								<li>363700003 : Direct morphology</li>
+								<li>363701004 : Direct substance</li>
+								<li>363702006 : Has focus</li>
+								<li>363703001 : Has intent</li>
+								<li>363704007 : Procedure site</li>
+								<li>363705008 : Has definitional manifestation</li>
+								<li>363708005 : Temporally follows</li>
+								<li>363709002 : Indirect morphology</li>
+								<li>363710007 : Indirect device</li>
+								<li>363713009 : Has interpretation</li>
+								<li>363714003 : Interprets</li>
+								<li>363715002 : Associated etiologic finding</li>
+								<li>367346004 : Measures</li>
+								<li>370127007 : Access instrument</li>
+								<li>370129005 : Measurement method</li>
+								<li>370130000 : Property</li>
+								<li>370131001 : Recipient category</li>
+								<li>370132008 : Scale type</li>
+								<li>370133003 : Specimen substance</li>
+								<li>370134009 : Time aspect</li>
+								<li>370135005 : Pathological process</li>
+								<li>371881003 : During</li>
+								<li>405813007 : Procedure site - Direct</li>
+								<li>405814001 : Procedure site - Indirect</li>
+								<li>405815000 : Procedure device</li>
+								<li>405816004 : Procedure morphology</li>
+								<li>408729009 : Finding context</li>
+								<li>408730004 : Procedure context</li>
+								<li>408731000 : Temporal context</li>
+								<li>408732007 : Subject relationship context</li>
+								<li>410675002 : Route of administration</li>
+								<li>411116001 : Has manufactured dose form</li>
+								<li>418775008 : Finding method</li>
+								<li>419066007 : Finding informer</li>
+								<li>424226004 : Using device</li>
+								<li>424244007 : Using energy</li>
+								<li>424361007 : Using substance</li>
+								<li>424876005 : Surgical approach</li>
+								<li>425391005 : Using access device</li>
+								<li>42752001  : Due to</li>
+								<li>447247004 : SNOMED CT source code to target map code correlation value</li>
+								<li>447255006 : Priority order reference set attribute</li>
+								<li>447257003 : "Linked to" reference set attribute</li>
+								<li>447561005 : SNOMED CT source code to target map code correlation not specified</li>
+								<li>447634004 : ICD-10 map category value</li>
+								<li>449080006 : SNOMED CT to ICD-10 rule-based mapping module</li>
+								<li>449608002 : Referenced component</li>
+								<li>47429007  : Associated with</li>
+								<li>5991000124107 : SNOMED CT to ICD-10-CM rule-based mapping module</li>
+								<li>609330002 : Map category value</li>
+								<li>609431004 : Concept model domain</li>
+								<li>704318007 : Property type</li>
+								<li>704319004 : Inheres in</li>
+								<li>704321009 : Characterizes</li>
+								<li>704324001 : Process output</li>
+								<li>704326004 : Precondition</li>
+								<li>704327008 : Direct site</li>
+								<li>705116007 : Original code system source for linked content value</li>
+								<li>706999006 : Expression</li>
+								<li>707000009 : SNOMED CT parsable string</li>
+								<li>718497002 : Inherent location</li>
+								<li>719715003 : Relative to part of</li>
+								<li>719722006 : Has realization</li>
+								<li>723277005 : Nonconformance to editorial policy component</li>
+								<li>723278000 : Not semantically equivalent component</li>
+								<li>723565001 : Domain constraint</li>
+								<li>723566000 : Parent domain</li>
+								<li>723567009 : Proximal primitive constraint</li>
+								<li>723568004 : Proximal primitive refinement</li>
+								<li>723570008 : Guide URL</li>
+								<li>723572000 : Grouped</li>
+								<li>723573005 : Concept model rule strength</li>
+								<li>723574004 : Content type</li>
+								<li>723575003 : Range constraint</li>
+								<li>723576002 : Attribute rule</li>
+								<li>723577006 : MRCM rule reference set</li>
+								<li>723600000 : Domain template for precoordination</li>
+								<li>723601001 : Domain template for postcoordination</li>
+								<li>723602008 : Attribute cardinality</li>
+								<li>723603003 : Attribute in group cardinality</li>
+								<li>726542003 : Has disposition</li>
+								<li>726633004 : Temporally related to</li>
+								<li>726634005 : During AND/OR after</li>
+								<li>731000124108 : US National Library of Medicine maintained module</li>
+								<li>732943007 : Has BoSS</li>
+								<li>732944001 : Has presentation strength numerator value</li>
+								<li>732945000 : Has presentation strength numerator unit</li>
+								<li>732946004 : Has presentation strength denominator value</li>
+								<li>732947008 : Has presentation strength denominator unit</li>
+								<li>733722007 : Has concentration strength denominator unit</li>
+								<li>733723002 : Has concentration strength denominator value</li>
+								<li>733724008 : Has concentration strength numerator value</li>
+								<li>733725009 : Has concentration strength numerator unit</li>
+								<li>734866006 : Concept attribute</li>
+								<li>734867002 : Expression definition status</li>
+								<li>736472000 : Has dose form administration method</li>
+								<li>736473005 : Has dose form transformation</li>
+								<li>736474004 : Has dose form intended site</li>
+								<li>736475003 : Has dose form release characteristic</li>
+								<li>736476002 : Has basic dose form</li>
+								<li>736518005 : Has state of matter</li>
+								<li>738774007 : Is modification of</li>
+								<li>762677007 : OWL expression</li>
+								<li>762678002 : OWL 2 language syntax</li>
+								<li>762949000 : Has precise active ingredient</li>
+								<li>763032000 : Has unit of presentation</li>
+								<li>766939001 : Plays role</li>
+								<li>766952006 : Count of base of active ingredient</li>
+								<li>900000000000003001 : Fully specified name</li>
+								<li>900000000000010007 : Stated relationship</li>
+								<li>900000000000011006 : Inferred relationship</li>
+								<li>900000000000012004 : SNOMED CT model component</li>
+								<li>900000000000013009 : Synonym</li>
+								<li>900000000000017005 : Case sensitive</li>
+								<li>900000000000020002 : Initial character case insensitive</li>
+								<li>900000000000073002 : Defined</li>
+								<li>900000000000074008 : Primitive</li>
+								<li>900000000000207008 : SNOMED CT core</li>
+								<li>900000000000226000 : Refinability value</li>
+								<li>900000000000227009 : Additional relationship</li>
+								<li>900000000000448009 : Case insensitive</li>
+								<li>900000000000451002 : Some</li>
+								<li>900000000000458008 : Attribute description</li>
+								<li>900000000000459000 : Attribute type</li>
+								<li>900000000000460005 : Component type</li>
+								<li>900000000000461009 : Concept type component</li>
+								<li>900000000000462002 : Description type component</li>
+								<li>900000000000463007 : Relationship type component</li>
+								<li>900000000000465000 : String</li>
+								<li>900000000000466004 : Text</li>
+								<li>900000000000475002 : Time</li>
+								<li>900000000000478000 : Unsigned integer</li>
+								<li>900000000000479008 : Attribute order</li>
+								<li>900000000000481005 : Concept inactivation value</li>
+								<li>900000000000482003 : Duplicate</li>
+								<li>900000000000483008 : Outdated</li>
+								<li>900000000000484002 : Ambiguous</li>
+								<li>900000000000485001 : Erroneous</li>
+								<li>900000000000486000 : Limited</li>
+								<li>900000000000487009 : Moved elsewhere</li>
+								<li>900000000000491004 : Attribute value</li>
+								<li>900000000000493001 : Description inactivation value</li>
+								<li>900000000000494007 : Inappropriate</li>
+								<li>900000000000495008 : Concept non-current</li>
+								<li>900000000000499002 : Scheme value</li>
+								<li>900000000000500006 : Map source concept</li>
+								<li>900000000000501005 : Map group</li>
+								<li>900000000000502003 : Map priority</li>
+								<li>900000000000503008 : Map rule</li>
+								<li>900000000000504002 : Map advice</li>
+								<li>900000000000505001 : Map target</li>
+								<li>900000000000510002 : Description in dialect</li>
+								<li>900000000000511003 : Acceptability</li>
+								<li>900000000000514006 : Generated reference set</li>
+								<li>900000000000515007 : Query</li>
+								<li>900000000000518009 : Annotated component</li>
+								<li>900000000000519001 : Annotation</li>
+								<li>900000000000532006 : Association source component</li>
+								<li>900000000000533001 : Association target component</li>
+								<li>900000000000535008 : Dependency target</li>
+								<li>900000000000536009 : Source effective time</li>
+								<li>900000000000537000 : Target effective time</li>
+								<li>900000000000539002 : Description format</li>
+								<li>900000000000540000 : Plain text</li>
+								<li>900000000000544009 : Description length</li>
+								<li>900000000000548007 : Preferred</li>
+								<li>900000000000549004 : Acceptable</li>
+								<li>900000000000550004 : Definition</li>
+								<li>Atoms_Label : Descriptions</li>
+								<li>Attributes_Label : Properties</li>
+								<li>Obsolete_Indicator : Retired</li>
+								<li>Obsolete_Label : Retired</li>
+								<li>Semantic_Types_Label : Semantic Tags</li>
+								<li>Subsets_Label : Refsets</li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<label class="alert alert-success" id="bt4"  onclick="dropdw4()"> Label Sets ↓</label>
+						<div  id="div4">
+							<ul>
+								<li>731000124108 : US National Library of Medicine maintained module</li>
+								<li>LABELFOR:731000124108 :  US National Library of Medicine maintained module</li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<label class="alert alert-success" id="bt5"  onclick="dropdw5()">  Relationship Types ↓</label>
+						<div  id="div5">
+							<ul>
+								<li>Inverse is a : Inverse is a (has child)</li>
+								<li>Is a : Is a (has parent)</li>
+								<li>other : Other</li>
+							</ul>
+						</div>
+
+					</div>
+					<div>
+						<label class="alert alert-success" id="bt6"  onclick="dropdw6()">  Semantic Types ↓</label>
+						<div  id="div6">
+							<ul>
+								<li>43171~162488 : Situation with explicit context</li>
+								<li>43171~174041 : Staging and scales</li>
+								<li>43171~181281 : Physical object</li>
+								<li>43171~193507 : Event</li>
+								<li>43171~234573 : Environment or geographical location</li>
+								<li>43171~261752 : Qualifier value</li>
+								<li>43171~262649 : Observable entity</li>
+								<li>43171~269823 : Special concept</li>
+								<li>43171~274004 : Pharmaceutical / biologic product</li>
+								<li>43171~27547  : Body structure</li>
+								<li>43171~27548  : Specimen</li>
+								<li>43171~301175 : Clinical finding</li>
+								<li>43171~307817 : Organism</li>
+								<li>43171~318074 : Record artifact</li>
+								<li>43171~364611 : Social context</li>
+								<li>43171~406617 : Procedure</li>
+								<li>43171~452623 : Physical force</li>
+								<li>43171~465601 : SNOMED CT Model Component</li>
+								<li>43171~6368   : Substance</li>
+
+							</ul>
+						</div>
+
+					</div>
+					<div>
+						<label class="alert alert-success" id="bt7"  onclick="dropdw7()">  Term Types ↓</label>
+						<div  id="div7">
+							<ul>
+								<li>900000000000003001 : Fully specified name</li>
+								<li>900000000000013009 : Synonym</li>
+								<li>900000000000550004 : Definition</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+				<!-- tab guidence的内容-->
+				<div class="tab-pane fade" id="guidence">
+					<li><font size ="5">Introduction: Brief Introduction of Browser</font></li>
+					<li><font size ="5">Home: Search Engine</font></li>
+					<li><font size ="5">Code Definition: ID definition in Snomed CT database</font></li>
+					<li><font size ="5">Contact us: Contact Information of Designers</font></li>
+				</div>
+				<!-- tab contact us的内容-->
+				<div class="tab-pane fade" id="contact">
+					<li><font size="5">Di Huang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dhuang05@nyit.edu</font></li>
+					<li><font size="5">Junfeng Wu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jwu37@nyit.edu</font></li>
+					<li><font size="5">Lisha Wu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lwu10@nyit.edu</font></li>
+					<li><font size="5">Chunyu Jiang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cjiang08@nyit.edu</font></li>
+					<li><font size="5">Yu Zhu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yzhu25@nyit.edu</font></li>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
